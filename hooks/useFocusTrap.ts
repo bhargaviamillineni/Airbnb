@@ -6,16 +6,10 @@ const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export interface UseFocusTrapOptions {
-  /** Whether the focus trap is active */
   enabled: boolean;
-  /** Element to return focus to when trap is deactivated */
   returnFocusRef?: React.RefObject<HTMLElement | null>;
 }
 
-/**
- * Traps keyboard focus within a container while an overlay is open.
- * On deactivation, returns focus to whichever element had it before the trap activated.
- */
 export function useFocusTrap<T extends HTMLElement>(
   options: UseFocusTrapOptions,
 ): React.RefObject<T | null> {

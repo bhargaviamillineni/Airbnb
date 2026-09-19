@@ -112,7 +112,7 @@ export function ListingPage() {
                   />
                 </div>
               ) : null}
-              <HostIntro listing={listingData} host={host} />
+              <HostIntro host={host} />
               <Divider />
               <Highlights highlights={highlights} />
               <Divider />
@@ -132,7 +132,6 @@ export function ListingPage() {
               />
             </div>
             <div>
-              <div id="bookingWidgetSentinel" aria-hidden="true" className="h-px w-0" />
               <BookingWidget
                 pricePerNight={pricing.pricePerNight}
                 currency={pricing.currency}
@@ -140,7 +139,6 @@ export function ListingPage() {
                 guests={guests}
                 maxGuests={guestCapacity}
                 onGuestsChange={setGuests}
-                stickySentinelId="bookingWidgetSentinel"
               />
             </div>
           </div>

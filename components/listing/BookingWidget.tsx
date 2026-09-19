@@ -6,9 +6,6 @@ import { cn } from "@/lib/utils";
 import { BookingDateRange } from "@/components/listing/BookingDateRange";
 import { formatCurrency } from "@/lib/format";
 import { nightsBetween, type DateRange } from "@/lib/dates";
-import { useStickyBookingWidget } from "@/hooks/useStickyBookingWidget";
-
-const STICKY_NAV_HEIGHT = 64;
 
 export interface BookingWidgetProps {
   pricePerNight: number;
@@ -27,13 +24,7 @@ export function BookingWidget({
   guests,
   maxGuests,
   onGuestsChange,
-  stickySentinelId,
 }: BookingWidgetProps) {
-  const { isSticky, stickyTop } = useStickyBookingWidget({
-    sentinelId: stickySentinelId,
-    stickyTopOffset: STICKY_NAV_HEIGHT + 32,
-  });
-
   const nights =
     range.start && range.end ? nightsBetween(range.start, range.end) : 0;
   const total = nights * pricePerNight;
@@ -42,20 +33,11 @@ export function BookingWidget({
       ? `${formatCurrency(total, currency)} for ${nights} night${nights === 1 ? "" : "s"}`
       : "Add dates for prices";
 
-  const stickyStyle: React.CSSProperties | undefined = isSticky
-    ? { top: `${stickyTop}px`, right: "var(--layout-content-padding)" }
-    : undefined;
-
   return (
     <aside
       id="bookingSticky"
       aria-label="Booking widget"
-      style={stickyStyle}
-      className={cn(
-        "w-[var(--layout-sidebar-width)] shrink-0 self-start transition-all duration-[var(--duration-normal)]",
-        isSticky ? "fixed" : "sticky",
-        !isSticky ? "top-[calc(var(--header-height)+1rem)]" : "",
-      )}
+      className="sticky top-24 w-[var(--layout-sidebar-width)] shrink-0 self-start"
     >
       <div className="mb-4 flex items-center justify-between gap-3 rounded-[var(--radius-lg)] border border-[var(--color-border-light)] p-4">
         <div className="flex items-start gap-3">

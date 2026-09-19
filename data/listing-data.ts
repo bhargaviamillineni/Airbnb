@@ -1,11 +1,3 @@
-/**
- * Typed mock data matching the reference listing:
- * Romantic Jacuzzi 1BHK Candolim | Mirashya UG10
- *
- * Photos are original Unsplash stand-ins. The reference CDN returned 429
- * from this environment, so we do not hotlink those files.
- */
-
 const PHOTO_URLS = [
   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
   "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
@@ -38,8 +30,6 @@ export interface ListingPhoto {
   caption?: string;
   section: PhotoSectionId;
 }
-
-export type Photo = ListingPhoto;
 
 export interface Host {
   id: string;
@@ -121,8 +111,6 @@ export interface Pricing {
   guests: number;
 }
 
-export type PricingBreakdown = Pricing;
-
 export interface PolicySection {
   title: string;
   items: string[];
@@ -165,7 +153,6 @@ export interface Listing {
   ratingChips: RatingChip[];
   ratingDistribution: number[];
   pricing: Pricing;
-  locationDescription: string;
   neighbourhoodHighlights: string;
   coordinates: { lat: number; lng: number };
   policies: PolicySection[];
@@ -359,8 +346,7 @@ export const listingData: Listing = {
     {
       id: "outdoor",
       title: "Outdoor entertainment",
-      description:
-        "The pool and alfresco dining are great for summer trips.",
+      description: "The pool and alfresco dining are great for summer trips.",
       icon: "sun",
     },
     {
@@ -384,11 +370,7 @@ export const listingData: Listing = {
     { id: "pool", name: "Pool", icon: "waves" },
     { id: "hottub", name: "Hot tub", icon: "bath" },
     { id: "pets", name: "Pets allowed", icon: "paw-print" },
-    {
-      id: "cameras",
-      name: "Exterior security cameras on property",
-      icon: "cctv",
-    },
+    { id: "cameras", name: "Exterior security cameras on property", icon: "cctv" },
     { id: "ac", name: "Air conditioning", icon: "thermometer-snowflake" },
     { id: "tv", name: "TV with standard cable", icon: "tv" },
     { id: "washer", name: "Washing machine", icon: "washing-machine" },
@@ -641,7 +623,6 @@ export const listingData: Listing = {
     checkOut: "10/23/2026",
     guests: 2,
   },
-  locationDescription: "Candolim, Goa, India",
   neighbourhoodHighlights:
     "Located in the heart of Candolim, Amor de Goa offers a peaceful stay with easy access to beaches, cafés, and popular attractions.",
   coordinates: { lat: 15.518, lng: 73.762 },

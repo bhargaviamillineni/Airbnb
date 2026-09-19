@@ -83,7 +83,6 @@ export function RatingBreakdown({
             </div>
           );
         })}
-        <div className="hidden" aria-hidden="true" />
       </div>
 
       <p className="sr-only">{reviewCount} reviews total</p>

@@ -1,5 +1,3 @@
-/** Calendar helpers for the listing availability picker. Dates are local midnight. */
-
 export interface DateRange {
   start: Date | null;
   end: Date | null;

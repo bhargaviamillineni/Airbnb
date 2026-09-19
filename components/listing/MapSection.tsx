@@ -14,7 +14,6 @@ export function MapSection({ location, neighbourhoodHighlights }: MapSectionProp
       <SectionHeading>Where you&apos;ll be</SectionHeading>
       <p className="mt-1 text-base text-primary">{location}</p>
 
-      {/* Static map stand-in — no third-party map SDK in this phase */}
       <div
         className="bg-map-placeholder relative mt-6 h-[var(--size-map-height)] overflow-hidden rounded-[var(--radius-md)]"
         role="img"

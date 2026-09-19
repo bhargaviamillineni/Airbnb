@@ -1,7 +1,3 @@
-/**
- * Original wordmark for this clone — not copied from Airbnb source.
- * Shape is a simplified Bélo-inspired loop plus “airbnb” text.
- */
 export function AirbnbLogo() {
   return (
     <svg

@@ -2,12 +2,6 @@
 
 import { useEffect } from "react";
 
-/**
- * Locks page-level scroll while `enabled` is true.
- * Safe to call on the server (no-op) and idempotent when re-enabled.
- * Restores the previous overflow/scroll state (including any original
- * document body inline style) on unmount or when re-disabled.
- */
 export function useScrollLock(enabled: boolean): void {
   useEffect(() => {
     if (typeof document === "undefined") return undefined;

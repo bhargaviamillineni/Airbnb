@@ -7,13 +7,9 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  /** Ref for focus trap container */
   containerRef?: RefObject<HTMLDivElement | null>;
-  /** ARIA label for the dialog */
   ariaLabel: string;
-  /** Optional className for the overlay backdrop */
   overlayClassName?: string;
-  /** Optional className for the dialog panel */
   panelClassName?: string;
 }
 

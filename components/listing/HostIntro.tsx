@@ -1,28 +1,12 @@
-import { GuestFavoriteBadge } from "@/components/listing/GuestFavoriteBadge";
-import type { Host, Listing } from "@/data/listing-data";
+import type { Host } from "@/data/listing-data";
 
 export interface HostIntroProps {
-  listing: Pick<
-    Listing,
-    | "rating"
-    | "reviewCount"
-    | "isGuestFavorite"
-  >;
   host: Host;
 }
 
-export function HostIntro({ listing, host }: HostIntroProps) {
+export function HostIntro({ host }: HostIntroProps) {
   return (
     <section aria-label="Hosted by" className="mt-8">
-      {listing.isGuestFavorite && (
-        <div className="mb-8">
-          <GuestFavoriteBadge
-            rating={listing.rating}
-            reviewCount={listing.reviewCount}
-          />
-        </div>
-      )}
-
       <div className="flex items-center gap-4">
         <span
           className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-host-avatar-bg)] text-center text-[8px] font-bold uppercase leading-tight text-text-inverse"

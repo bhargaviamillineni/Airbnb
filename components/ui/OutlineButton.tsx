@@ -4,7 +4,6 @@ export interface OutlineButtonProps extends ButtonHTMLAttributes<HTMLButtonEleme
   children: ReactNode;
 }
 
-/** Pill outline CTA used for “Show all …” actions. */
 export function OutlineButton({
   children,
   className = "",

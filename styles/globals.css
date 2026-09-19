@@ -1,45 +1,43 @@
 @import "tailwindcss";
 
-/* Design tokens — colors, type scale, spacing, radii, motion durations. */
-
 @theme {
-  /* ── Brand colors ── */
+  /* Brand colors */
   --color-brand: #ff385c;
   --color-brand-hover: #e31c5f;
   --color-brand-light: #ffe7ec;
 
-  /* ── Text ── */
+  /* Text */
   --color-text-primary: #222222;
   --color-text-secondary: #717171;
   --color-text-tertiary: #b0b0b0;
   --color-text-inverse: #ffffff;
 
-  /* ── Surfaces & borders ── */
+  /* Surfaces & borders */
   --color-surface: #ffffff;
   --color-surface-muted: #f7f7f7;
   --color-border: #dddddd;
   --color-border-light: #ebebeb;
   --color-divider: #ebebeb;
 
-  /* ── Interactive states ── */
+  /* Interactive states */
   --color-hover-bg: #f7f7f7;
   --color-focus-ring: #222222;
 
-  /* ── Shadows ── */
+  /* Shadows */
   --shadow-card: 0 6px 16px rgba(0, 0, 0, 0.12);
   --shadow-sticky: 0 6px 20px rgba(0, 0, 0, 0.2);
   --shadow-modal: 0 8px 28px rgba(0, 0, 0, 0.28);
 
-  /* ── Typography [VERIFY: Airbnb uses proprietary "Circular" font] ── */
+  /* Typography — Inter (Airbnb uses proprietary Circular) */
   --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
 
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.375rem; /* 22px [VERIFY] */
-  --text-2xl: 1.625rem; /* 26px [VERIFY] */
-  --text-3xl: 1.75rem; /* 28px [VERIFY] */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 1.75rem;
 
   --leading-tight: 1.25;
   --leading-normal: 1.5;
@@ -50,40 +48,40 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* ── Spacing scale (4px base) ── */
+  /* Spacing scale (4px base) */
   --spacing-0: 0;
-  --spacing-1: 0.25rem; /* 4px */
-  --spacing-2: 0.5rem; /* 8px */
-  --spacing-3: 0.75rem; /* 12px */
-  --spacing-4: 1rem; /* 16px */
-  --spacing-5: 1.25rem; /* 20px */
-  --spacing-6: 1.5rem; /* 24px */
-  --spacing-8: 2rem; /* 32px */
-  --spacing-10: 2.5rem; /* 40px */
-  --spacing-12: 3rem; /* 48px */
-  --spacing-16: 4rem; /* 64px */
-  --spacing-20: 5rem; /* 80px [VERIFY: section gaps] */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
 
-  /* ── Layout ── */
-  --header-height: 5rem; /* 80px — observed from reference header */
-  --layout-max-width: 1120px; /* [VERIFY: inner content width; reference ~1120px] */
-  --layout-content-padding: 5rem; /* 80px at desktop */
-  --layout-sidebar-width: 23.25rem; /* 372px [VERIFY] */
-  --layout-main-gap: 5.5rem; /* 88px [VERIFY] */
-  --size-hero-height: 26.5rem; /* 424px [VERIFY] */
-  --size-sleep-card: 18.75rem; /* 300px [VERIFY] */
-  --size-sleep-image: 11.5rem; /* 184px [VERIFY] */
+  /* Layout */
+  --header-height: 5rem;
+  --layout-max-width: 1120px;
+  --layout-content-padding: 5rem;
+  --layout-sidebar-width: 23.25rem;
+  --layout-main-gap: 5.5rem;
+  --size-hero-height: 26.5rem;
+  --size-sleep-card: 18.75rem;
+  --size-sleep-image: 11.5rem;
   --size-avatar-sm: 2.5rem;
   --size-avatar-md: 3.5rem;
   --size-avatar-lg: 6.5rem;
   --size-host-card: 20.5rem;
-  --size-map-height: 30rem; /* 480px [VERIFY] */
-  --size-photo-tour-hero: 28rem; /* [VERIFY] */
-  --size-photo-section-hero: 20rem; /* [VERIFY] */
-  --size-photo-tour-thumb: 16rem; /* [VERIFY] */
-  --max-w-guest-fav-text: 4.5rem; /* [VERIFY] */
+  --size-map-height: 30rem;
+  --size-photo-tour-hero: 28rem;
+  --size-photo-section-hero: 20rem;
+  --size-photo-tour-thumb: 16rem;
+  --max-w-guest-fav-text: 4.5rem;
 
-  /* ── Host / co-host palette ── */
+  /* Host / co-host palette */
   --color-host-avatar-bg: #1b4332;
   --color-cohost-1: #6a6a6a;
   --color-cohost-2: #c13515;
@@ -94,19 +92,19 @@
   --color-cohost-7: #ff385c;
   --color-cohost-8: #428bff;
 
-  /* ── Map placeholder ── */
+  /* Map placeholder */
   --color-map-land: #dcefdc;
   --color-map-water: #c5e4ef;
   --color-map-halo: rgba(34, 34, 34, 0.12);
 
-  /* ── Border radii ── */
-  --radius-sm: 0.5rem; /* 8px */
-  --radius-md: 0.75rem; /* 12px */
-  --radius-lg: 1rem; /* 16px — booking card */
-  --radius-xl: 1.5rem; /* 24px — guest-favourite pill */
+  /* Border radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* ── Transitions ── */
+  /* Transitions */
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --duration-slow: 300ms;
@@ -115,13 +113,12 @@
   --ease-enter: cubic-bezier(0, 0, 0.2, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 
-  /* ── Z-index scale ── */
+  /* Z-index scale */
   --z-sticky: 10;
   --z-overlay: 50;
   --z-modal: 100;
 }
 
-/* ── Base styles ── */
 @layer base {
   *,
   *::before,
@@ -144,13 +141,11 @@
     line-height: var(--leading-normal);
   }
 
-  /* Visible focus indicators — never remove without replacement */
   :focus-visible {
     outline: 2px solid var(--color-focus-ring);
     outline-offset: 2px;
   }
 
-  /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -163,7 +158,6 @@
   }
 }
 
-/* ── Utility aliases for token-based Tailwind usage ── */
 @utility text-primary {
   color: var(--color-text-primary);
 }

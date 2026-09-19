@@ -3,7 +3,6 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 export type IconButtonSize = "sm" | "md" | "lg";
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Accessible label — required since icon-only buttons have no visible text */
   "aria-label": string;
   size?: IconButtonSize;
   children: ReactNode;
