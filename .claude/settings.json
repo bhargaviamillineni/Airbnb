@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allowRunCommands": true
+  },
+  "preferredTools": [
+    "type-check",
+    "lint",
+    "build"
+  ],
+  "projectInstructions": "../CLAUDE.md"
+}
